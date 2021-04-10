@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+<!--    
+        Se quiser colocar a autenticacao a partir de um link
+        <div class="container unauthenticated">
+            With GitHub: <a href="/oauth2/authorization/github">click here</a>
+        </div>
+        <div class="container authenticated" style="display:none">
+            Logged in as: <span id="user"></span>
+        </div>-->
+
+        <div id="content"></div>
+
+    </body>
+    <script>
+
+        fetch("/data")
+                .then(response => response.json())
+                .then(data => document.querySelector("#content").textContent = JSON.stringify(data));
+
+    </script>
+</html>
